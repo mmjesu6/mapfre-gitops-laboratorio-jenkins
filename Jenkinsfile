@@ -21,9 +21,16 @@ pipeline {
                 chmod +x scrPrueba.sh
                 echo "Jesus"|./scrPrueba.sh Jesus
                 echo "Jesus"|./scrPrueba.sh secreto 
-                '''           
-                
-                
+                '''   
+            }
+        }
+        stage('Tests') {
+            agent{label "docker-agent"}
+            when{
+                expression{BRANCH_NAME.startsWith("PR-*")}
+            }
+            steps {
+                echo "Testing on PR"   
             }
         }
     }
