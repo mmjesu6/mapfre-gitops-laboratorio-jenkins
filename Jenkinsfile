@@ -11,11 +11,12 @@ pipeline {
         stage('sh stage') {
             agent{label "docker-agent"}
             steps {
-                sh '''
+                logsDocker= sh (returnStdout: true, script: '''
                 chmod +x scrPrueba.sh
                 echo "Jesus"|./scrPrueba.sh Jesus
                 echo "Jesus"|./scrPrueba.sh secreto 
-                '''
+                ''').trim()
+                echo logsDocekr
                 
             }
         }
