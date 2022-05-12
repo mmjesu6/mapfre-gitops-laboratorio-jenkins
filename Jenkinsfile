@@ -22,12 +22,13 @@ pipeline {
                 echo "Jesus"|./scrPrueba.sh Jesus
                 echo "Jesus"|./scrPrueba.sh secreto 
                 '''   
+                echo "Branch Naming " + BRANCH_NAME
             }
         }
         stage('Tests') {
             agent{label "docker-agent"}
             when{
-                expression{BRANCH_NAME.startsWith("PR-*")}
+                expression{BRANCH_NAME.startsWith("PR-")}
             }
             steps {
                 echo "Testing on PR"   
