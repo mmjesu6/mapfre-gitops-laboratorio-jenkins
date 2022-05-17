@@ -20,7 +20,7 @@ pipeline {
                 sh  '''
                 chmod +x scrPrueba.sh
                 echo "Jesus"|./scrPrueba.sh Jesus
-                echo "Jesus"|./scrPrueba.sh secreto 
+                echo "secreto"|./scrPrueba.sh secreto 
                 '''   
                 echo "Branch Naming " + BRANCH_NAME
             }
