@@ -31,7 +31,8 @@ pipeline {
                 expression{BRANCH_NAME.startsWith("PR-")}
             }
             steps {
-                echo "Testing on PR"   
+                echo "Testing on PR" 
+                sh "./testScript.sh" 
             }
         }
     }
