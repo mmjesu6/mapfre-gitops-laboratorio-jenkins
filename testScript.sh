@@ -8,9 +8,9 @@ else
     exit 1
 fi 
 OUTPUT= $(echo "secreto"|bash scrPrueba.sh secrecto)
-if ["$OUTPUT" = "Encontraste el truco!: el primer parámetro del script es: oterces"];then
+if ["$OUTPUT" = "Encontraste el truco!: el primer parámetro del script es: otcerces"];then
     echo "Test truco superado"
 else 
-    echo "test ha fallado"
+    echo "test 2 ha fallado"
     exit 1
 fi 
