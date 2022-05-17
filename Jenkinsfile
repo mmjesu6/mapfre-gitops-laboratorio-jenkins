@@ -32,7 +32,7 @@ pipeline {
             }
             steps {
                 echo "Testing on PR" 
-                sh "./testScript.sh" 
+                sh "chmod +x ./testScript.sh; ./testScript.sh" 
             }
         }
     }
